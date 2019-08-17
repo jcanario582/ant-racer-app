@@ -1,33 +1,47 @@
-.App {
-  text-align: center;
+.logo {
+  background-image: url(./red-ant.png);
+  background-size: 120px;
+  background-repeat: no-repeat;
+  min-height: 90px;
+  margin-left: 28px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.btn {
+  margin-bottom: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#racers {
+  color: #FFF;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 20px 20px;
+  text-align: left;
 }
 
-.App-link {
-  color: #61dafb;
+.racer0 {
+  background-color: #007bff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.racer1 {
+  background-color: #dc3545;
+}
+
+.racer2 {
+  background-color: #28a745;
+}
+
+.racer3 {
+  background-color: #F99618;
+}
+
+.racer4 {
+  background-color: #FF33C1;
+}
+
+.odds {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
 }
