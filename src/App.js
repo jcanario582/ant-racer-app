@@ -6,22 +6,22 @@ const App = () => {
   const [ants, setAnts] = useState({});
   const [updatedAnts, setUpdatedAnts] = useState({});
   const [buttonText, setButtonText] = useState('Begin Calculations');
-  const [search, setSearch] = useState();
 
   function calculateOdds() {
     setButtonText("Recalculate Odds");
 
-    Object.keys(ants).map((index) => {
+    function updateAnts(odds, index) {
       const updatedAnts = Object.assign({}, {ants});
-      updatedAnts.ants[index].likelihoodOfAntWinning = "";
+      updatedAnts.ants[index].likelihoodOfAntWinning = odds;
       updatedAnts.ants[index].calculatingOdds = "Calculating Odds...";
       setUpdatedAnts(updatedAnts);
+    }
+
+    Object.keys(ants).map((index) => {
+      updateAnts("", index);
 
       const callback = (likelihoodOfAntWinning) => {
-        const updatedAnts = Object.assign({}, {ants});
-        updatedAnts.ants[index].likelihoodOfAntWinning = likelihoodOfAntWinning;
-        updatedAnts.ants[index].calculatingOdds = "";
-        setUpdatedAnts(updatedAnts);
+        updateAnts(likelihoodOfAntWinning, index);
       };
 
       generateAntWinLikelihoodCalculator()(callback);
@@ -80,7 +80,7 @@ const App = () => {
     };
 
     fetchData();
-  }, [search]);
+  }, []);
 
   return ( 
     <div className="container">
